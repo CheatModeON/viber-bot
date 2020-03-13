@@ -20,7 +20,7 @@ bot_configuration = BotConfiguration(
 )
 viber = Api(bot_configuration)
 
-viber.set_webhook('https://viber-bot.azurewebsites.net:443/')
+viber.set_webhook('https://viber-bot.azurewebsites.net/')
 
 @app.route('/', methods=['POST'])
 def incoming():
