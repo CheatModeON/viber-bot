@@ -32,9 +32,9 @@ def incoming():
     #    viber.send_messages(viber_request.get_user().get_id(), [
     #        TextMessage(text="Welcome!")
     #    ])
+    #return Response(status=200)
 
-    print(viber.get_account_info)
-    return Response(status=200)
+    return (viber.get_account_info)
 
 if __name__ == "__main__":
     #context = ('server.crt', 'server.key')
