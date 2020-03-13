@@ -11,6 +11,8 @@ from viberbot.api.viber_requests import ViberMessageRequest
 from viberbot.api.viber_requests import ViberSubscribedRequest
 from viberbot.api.viber_requests import ViberUnsubscribedRequest
 
+import requests
+
 app = Flask(__name__)
 
 bot_configuration = BotConfiguration(
@@ -20,10 +22,6 @@ bot_configuration = BotConfiguration(
 )
 viber = Api(bot_configuration)
 
-
-print(viber.get_account_info)
-
-
 @app.route('/', methods=['GET'])
 def incoming():
     #viber_request = viber.parse_request(request.get_data())
@@ -32,9 +30,23 @@ def incoming():
     #    viber.send_messages(viber_request.get_user().get_id(), [
     #        TextMessage(text="Welcome!")
     #    ])
-    #return Response(status=200)
+    
+    url = 'https://chatapi.viber.com/pa/send_message'
+    data = {
+        "receiver": "5419277678147001469",
+        "type": "text",
+        "text": "Hello world!"
+    }
+    headers = {
+    "Content-Type", "application/application/json",
+    "X-Viber-Auth-Token", "4b352455f127dc7d-abf771323d3e435f-95efbc9daeaf7b85"
+    }
 
-    return (viber.get_account_info)
+    r = requests.post(url, data=json.dumps(data), headers=headers)
+
+
+    return Response(status=200)
+
 
 if __name__ == "__main__":
     #context = ('server.crt', 'server.key')
