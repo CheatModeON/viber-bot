@@ -20,6 +20,7 @@ bot_configuration = BotConfiguration(
 )
 viber = Api(bot_configuration)
 
+print(viber.get_account_info)
 
 @app.route('/', methods=['POST'])
 def incoming():
@@ -31,7 +32,7 @@ def incoming():
     #    ])
 
     #return Response(status=200)
-    return viber.get_account_info
+    return "test"
 
 
 if __name__ == "__main__":
