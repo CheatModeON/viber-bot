@@ -45,7 +45,7 @@ def broadcast():
       "ABB102akPCRKFaqxWnafEIA==",
       "ABB102akPCRKFaqxWna111==",
       "ABB102akPCRKFaqxWnaf222=="
-   ]'
+   ]}'
     viber.broadcast_message(obj)
 }
 
