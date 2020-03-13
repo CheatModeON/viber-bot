@@ -23,8 +23,6 @@ viber = Api(bot_configuration)
 viber.set_webhook('https://viber-bot.azurewebsites.net/')
 
 
-print(viber.get_account_info)
-
 
 @app.route('/', methods=['POST'])
 def incoming():
@@ -36,18 +34,8 @@ def incoming():
     #    ])
 
     #return Response(status=200)
-    return "test"
+    return viber.get_account_info
 
-@app.route('/broadcast', methods=['POST'])
-def broadcast():
-    obj = '{  
-   "broadcast_list":[  
-      "ABB102akPCRKFaqxWnafEIA==",
-      "ABB102akPCRKFaqxWna111==",
-      "ABB102akPCRKFaqxWnaf222=="
-   ]}'
-    viber.broadcast_message(obj)
-}
 
 if __name__ == "__main__":
     #context = ('server.crt', 'server.key')
