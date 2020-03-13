@@ -24,14 +24,15 @@ viber.set_webhook('https://viber-bot.azurewebsites.net/')
 
 @app.route('/', methods=['POST'])
 def incoming():
-    viber_request = viber.parse_request(request.get_data())
+    #viber_request = viber.parse_request(request.get_data())
 
-    if isinstance(viber_request, ViberConversationStartedRequest) :
-        viber.send_messages(viber_request.get_user().get_id(), [
-            TextMessage(text="Welcome!")
-        ])
+    #if isinstance(viber_request, ViberConversationStartedRequest) :
+    #    viber.send_messages(viber_request.get_user().get_id(), [
+    #        TextMessage(text="Welcome!")
+    #    ])
 
-    return Response(status=200)
+    #return Response(status=200)
+    return "test"
 
 if __name__ == "__main__":
     #context = ('server.crt', 'server.key')
