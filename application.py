@@ -24,7 +24,7 @@ viber = Api(bot_configuration)
 print(viber.get_account_info)
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def incoming():
     #viber_request = viber.parse_request(request.get_data())
 
