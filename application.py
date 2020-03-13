@@ -20,7 +20,9 @@ bot_configuration = BotConfiguration(
 )
 viber = Api(bot_configuration)
 
+
 print(viber.get_account_info)
+
 
 @app.route('/', methods=['POST'])
 def incoming():
@@ -31,9 +33,8 @@ def incoming():
     #        TextMessage(text="Welcome!")
     #    ])
 
-    #return Response(status=200)
-    return "test"
-
+    print(viber.get_account_info)
+    return Response(status=200)
 
 if __name__ == "__main__":
     #context = ('server.crt', 'server.key')
