@@ -21,10 +21,10 @@ bot_configuration = BotConfiguration(
     auth_token='4b352455f127dc7d-abf771323d3e435f-95efbc9daeaf7b85'
 )
 viber = Api(bot_configuration)
-viber.set_webhook('https://viber-bot.azurewebsites.net:443/')
+viber.set_webhook('https://viber-bot.azurewebsites.net/')
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def incoming():
     #viber_request = viber.parse_request(request.get_data())
 
@@ -74,5 +74,5 @@ def incoming():
 
 if __name__ == "__main__":
     #context = ('server.crt', 'server.key')
-    app.run(host='0.0.0.0', port=443, debug=True)
-    #app.run()
+    #app.run(host='0.0.0.0', port=443, debug=True)
+    app.run()
